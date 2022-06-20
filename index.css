@@ -1,0 +1,131 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #fff;
+    -webkid-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background: rgb(62,117,220);
+    background: linear-gradient(45deg, rgba(62,117,220,1) 25%, rgba(204,137,154,1) 75%);
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+.img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4 {
+   margin: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+ul, ol, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.conteiner {
+    display: flex;
+
+    width: 100%;
+    height: 100vh;
+    max-width: 1130px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.clock {
+    margin: auto 0;
+    width: 100%;
+}
+
+.clock-item {
+    display: flex;
+    justify-content: space-around;
+
+    text-transform: uppercase;
+    padding: 6rem 0;
+
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.705) 1px 1px 100px;
+    background: #000;
+}
+
+.item {
+    min-width: 160px;
+    text-align: center;
+    position: relative;
+}
+
+.item::after {
+    content: "";
+    display: block;
+    width: 7.5px;
+    height: 7.5px;
+
+    border-radius: 5px;
+    background-color: #474d4b;
+
+    position: absolute;
+    top: 40%;
+    left: 142%;
+    transform: translateX(-142%);
+    z-index: 1;
+}
+
+.item::before {
+    content: "";
+    display: block;
+    width: 7.5px;
+    height: 7.5px;
+
+    border-radius: 5px;
+    background-color: #474d4b;
+
+    position: absolute;
+    top: 60%;
+    left: 142%;
+    transform: translateX(-142%);
+    z-index: 1;
+}
+
+.item:last-child::after {
+    display: none;
+}
+
+.item:last-child::before {
+    display: none;
+}
+
+.title-item {
+    position: relative;
+}
+
+.title-description {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #474d4b;
+}
