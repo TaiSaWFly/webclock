@@ -5,9 +5,11 @@ const date = {
     seconds: new Date().getSeconds(),
 }
 
+const day = ['Su', 'Mo','Tu','We','Th','Fr','Sa']
+
 const clockHTML = document.querySelector('[data="clock"]')
 const clockItems = clockHTML.querySelectorAll('[data-time]')
-renderDateTime(clockItems, parseDay(date), date.hours, date.minutes, date.seconds)
+renderDateTime(clockItems, parseDay(date, day), date.hours, date.minutes, date.seconds)
 
 clocks()
 
@@ -20,7 +22,7 @@ function clocks() {
             seconds: new Date().getSeconds(),
         }
 
-        renderDateTime(clockItems, parseDay(newDate), newDate.hours, newDate.minutes, newDate.seconds)
+        renderDateTime(clockItems, parseDay(newDate, day), newDate.hours, newDate.minutes, newDate.seconds)
     }, 1000)
 }
 
@@ -57,23 +59,8 @@ function parseSeconds(seconds) {
     return parseSeconds
 }
 
-function parseDay(date) {
-    let parseDay = null
-    if (date.day === 0) {
-        parseDay = 'Su'
-    } else if (date.day === 1) {
-        parseDay = 'Mo'
-    } else if (date.day === 2) {
-        parseDay = 'Tu'
-    } else if (date.day === 3) {
-        parseDay = 'We'
-    } else if (date.day === 4) {
-        parseDay = 'Th'
-    } else if (date.day === 5) {
-        parseDay = 'Fr'
-    } else if (date.day === 6) {
-        parseDay = 'Su'
-    }
-
+function parseDay(date, day) {
+    const dayNow = date.day
+    const parseDay = day.find((day, i) => i === dayNow ? day : false)
     return parseDay
 }
